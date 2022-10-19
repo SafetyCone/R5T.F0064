@@ -1,13 +1,29 @@
 using System;
+using System.Threading.Tasks;
+
+using Microsoft.Extensions.Logging;
 
 
 namespace R5T.F0064.Construction
 {
-    class Program
+    partial class Program
     {
-        static void Main()
+        private ILogger Logger { get; }
+
+
+        public Program(
+            ILogger<Program> logger)
         {
-            Console.WriteLine("Hello World!");
+            this.Logger = logger;
+        }
+
+        public Task Run()
+        {
+            this.Logger.LogInformation("Hello world!");
+
+            Console.WriteLine("Hello world!");
+
+            return Task.CompletedTask;
         }
     }
 }
