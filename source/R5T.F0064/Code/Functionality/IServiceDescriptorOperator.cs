@@ -210,13 +210,13 @@ namespace R5T.F0064
                 return Z0000.Strings.Instance.Null_TextRepresentation;
             }
 
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
 
-            //// The below needs testing!
-            //var implementationFactoryType = serviceDescriptor.ImplementationInstance.GetType();
+            // The below needs testing!
+            var implementationFactoryType = serviceDescriptor.ImplementationFactory.GetType();
 
-            //var implementationFactoryTypeIdentityName = Instances.IdentityNameProvider.GetIdentityName(implementationFactoryType);
-            //return implementationFactoryTypeIdentityName;
+            var implementationFactoryTypeIdentityName = Instances.IdentityNameProvider.GetIdentityName(implementationFactoryType);
+            return implementationFactoryTypeIdentityName;
         }
 
         public ServiceDescriptorDescription ToServiceDescriptorDescription(ServiceDescriptor serviceDescriptor)
